@@ -1,0 +1,31 @@
+@import '../../../globals/styles/base';
+
+.category {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+
+    &__item {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 1rem;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $secondary;
+        }
+    }
+
+    &__item--active {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: $primary;
+    }
+}

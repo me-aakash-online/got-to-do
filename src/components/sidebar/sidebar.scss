@@ -1,0 +1,63 @@
+@import '../../globals/styles/base';
+
+$primary-border: 0.2rem solid $primary;
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+    border-bottom: $primary-border;
+    overflow-y: hidden;
+
+    @include md {
+        overflow-y: visible;
+        min-width: 30%;
+        border-bottom: none;
+        border-right: $primary-border;
+    }
+
+    &__button {
+        padding: 1rem;
+        margin: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: lighter;
+        border-radius: 1rem;
+        border: 0.1rem solid $secondary;
+        background-color: $clear;
+        transition: all 0.3s linear;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        @include button-effect;
+
+        @include md {}
+    }
+
+    &__icon {
+        width: 3rem;
+    }
+
+    &__subtitle {
+        margin: 1rem 0;
+        align-self: stretch;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $secondary;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .dropdown-icon {
+            width: 1.5rem;
+        }
+    }
+
+}

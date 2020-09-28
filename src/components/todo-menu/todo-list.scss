@@ -1,0 +1,90 @@
+@import '../../globals/styles/base';
+
+.todo-menu-container {
+    overflow-y: auto;
+
+    .todo-menu {
+        height: fit-content;
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        @include md {
+            grid-template-columns: repeat(2, minmax(auto, 1fr));
+            flex: 1;
+        }
+
+        @include lg {
+            grid-template-columns: repeat(3, minmax(auto, 1fr));
+        }
+
+        @include xl {
+            grid-template-columns: repeat(4, minmax(auto, 1fr));
+        }
+
+        .todo-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem 1rem;
+            border: 1px solid $primary;
+            background-color: $clear;
+            border-radius: 1rem;
+            min-width: 0;
+            align-self: flex-start;
+            transition: all 0.3s linear;
+            @include card-effect;
+
+            &:hover {
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+
+            &__button {
+                position: absolute;
+                font-size: 0.8rem;
+                font-weight: bold;
+                top: 0.2rem;
+                right: 0.2rem;
+                display: flex;
+                align-items: center;
+                transition: all 0.5s linear;
+
+                &:hover {
+                    transform: rotateZ(360deg);
+                }
+
+                .delete-icon {
+                    width: 1rem;
+                }
+            }
+
+            &__title {
+                margin: 1rem 0;
+                font-size: 1rem;
+                white-space: pre-wrap;
+                overflow-wrap: break-word;
+            }
+
+            &__spacer {
+                flex: 1
+            }
+
+            &__status {
+                margin: 0.5rem 0;
+                color: $secondary;
+                align-self: stretch;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 0.5rem;
+
+                .icon {
+                    width: 1rem;
+                }
+            }
+        }
+
+    }
+}

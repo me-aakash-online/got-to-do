@@ -1,0 +1,33 @@
+@import '../../globals/styles/base';
+
+.header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .header {
+        width: 100vw;
+        height: $header-height;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background-color: $clear;
+
+        &__button {
+            font-weight: 100;
+            font-size: 2rem;
+            background: transparent;
+            border: 0;
+            font-family: Chalkduster;
+            margin-left: 1rem;
+        }
+
+        &__bar {
+            position: absolute;
+            bottom: 0;
+            height: 7%;
+            width: 100%;
+            background-color: $primary;
+        }
+    }
+}

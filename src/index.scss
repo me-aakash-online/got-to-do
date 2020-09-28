@@ -1,0 +1,59 @@
+@import 'globals/styles/base';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  background-color: $bg-color;
+
+  body {
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background-color: $clear;
+    color: $text-color;
+    white-space: nowrap;
+
+    @include md {
+      height: 100vh;
+    }
+
+    #root {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    textarea,
+    input {
+      font-size: 1rem;
+      padding: 0.2rem 0.4rem;
+    }
+
+    @include xl {
+      border-left: 0.1rem solid $secondary;
+      border-right: 0.1rem solid $secondary;
+    }
+  }
+
+  @include md {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+
+  @include xl {
+    font-size: 24px;
+
+    body {
+      max-width: $screen-desktop-max;
+    }
+  }
+}

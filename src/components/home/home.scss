@@ -1,0 +1,12 @@
+@import '../../globals/styles/base';
+
+.home {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+
+    @include md {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,42 @@
+// screen sizes
+$screen-mobile-max: 700px;
+$screen-tablet-max: 1024px;
+$screen-desktop-max: 1440px;
+
+// Colours
+$primary: #669BBC;
+$secondary: darkgray;
+$bg-color: #efefef;
+$text-color: #000;
+$clear: #ffffff;
+
+// Variables
+$header-height: 8vh;
+
+@mixin md {
+    @media only screen and (min-width: $screen-mobile-max) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen and (min-width: $screen-tablet-max) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media only screen and (min-width: $screen-desktop-max) {
+        @content;
+    }
+}
+
+@mixin card-effect {
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem $secondary,
+        -0.1rem -0.1rem 1rem 0.1rem $bg-color;
+}
+
+@mixin button-effect {
+    box-shadow: 0.05rem 0.05rem 0.5rem 0.1rem $secondary,
+        -0.05rem -0.05rem 0.5rem 0.1rem $bg-color;
+}
